@@ -71,15 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           title: Text(
                               (matches[i]['team-1']) + " " + 'V/S' + " " +
                                   (matches[i]['team-2'])),
-                          subtitle: Text(matches[i]['date']),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                new MaterialPageRoute(
-                                    builder: (context) =>
-                                        DetailPage()));
-                          },
-
+                          subtitle: Text(matches[i]['date'])
                           trailing: Column(
                               children: <Widget>[
                                 Text(
@@ -91,74 +83,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                   matches[i]['type'],
                                   style: new TextStyle(
                                       fontStyle: FontStyle.italic),
-
                                 ),
-                              ])
-
+                             ])
                       )
                   );
                 }
             ),
           )
         ],
-
       ),
-
-
     );
   }
 }
-
-  class DetailPage extends StatelessWidget {
-  // final User user;
-
-  //DetailPage(this.user);
-  var matches;
-  @override
-  Widget build(BuildContext context) {
-  return Scaffold(
-  appBar: new AppBar(
-  centerTitle: true,
-  backgroundColor: Colors.blue,
-  title: Text(
-  "Details",
-  style: new TextStyle(
-  fontStyle: FontStyle.normal, fontWeight: FontWeight.w700),
-  ),
-  ),
-  body: new Container(
-  child: ListView(
-  children: <Widget>[
-  Padding(
-  padding: EdgeInsets.all(20.0),
-  ),
-  /* Center(
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(user.picture, scale: 40.0),
-              ),
-            ),*/
-  Padding(
-  padding: EdgeInsets.all(10.0),
-  ),
-  Center(
-  child: Text(
-  'ABOUT:',
-  style: new TextStyle(fontSize: 25.0, fontWeight: FontWeight.w500),
-  )),
-  Padding(
-  padding: EdgeInsets.all(10.0),
-  child: Center(
-  child: Text ("matches[i]['type']"
-  ,
-  style: new TextStyle(
-  fontSize: 15.0,
-  fontWeight: FontWeight.w100,
-  fontStyle: FontStyle.normal,
-  ),
-  ))),
-  ],
-  ),
-  ),
-  );
-  }}
-
